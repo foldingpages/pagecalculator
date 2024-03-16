@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="pagetracker.js"></script>
+    </head>
+    <body style="text-align: center;">
+        <header height="20%" style="background: aquamarine;">
+            <h1>Page Calculator</h1>
+        </header>
+        <!-- take input for number of pages and number of days -->
+        <div id="default-pages">
+            <label for="Pages">Pages: </label>
+            <input type="text" id="pages" name="Pages" placeholder="total pages in book" width="50px">
+            <br><br>
+            <label for="Read">Pages read (optional): </label>
+            <input type="text" id="alreadyread" name="Read" placeholder="pages already read">
+            <br><br>
+            <label for="Days">Days: </label>
+            <input type="text" id="days" name="Days" placeholder="desired days to finish in">
+            <!-- do the math to calculate pages/day -->
+            <!-- alert (make a popup) with the answer -->
+            <br><br>
+            <button onclick="calculatePages()">Submit</button>
+        </div>
+        <br>
+        <br>
+        <div id="audiobooks">
+            <label for="Length">Total length: </label>
+            <input type="text" id="totallength" name="Length" placeholder="hh:mm:ss">
+            <br><br>
+            <label for="Listened">Length listened to (optional): </label>
+            <input type="text" id="listened" name="Listened" placeholder="hh:mm:ss">
+            <br><br>
+            <label for="Days">Days: </label>
+            <input type="text" id="audiodays" name="Days" placeholder="desired days to finish in">
+            <br><br>
+            <button onclick="calculateMinutes()">Submit</button>
+        </div>
+    </body>
+</html>
