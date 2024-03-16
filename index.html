@@ -2,39 +2,88 @@
 <html>
     <head>
         <script src="pagetracker.js"></script>
+        <style>
+            main {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 40px;
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+            .left, .right {
+                padding: 25px;
+                border: 1px solid #ccc;
+                background-color: #89ade2;
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                width: 45%;
+                margin-right: 10px;
+            }
+
+        </style>
+        <title>Reading Calculator</title>
     </head>
     <body style="text-align: center;">
-        <header height="20%" style="background: aquamarine;">
-            <h1>Page Calculator</h1>
+        <header height="20%" style="background: #89ade2;">
+            <h1>Reading Calculator</h1>
         </header>
-        <!-- take input for number of pages and number of days -->
-        <div id="default-pages">
-            <label for="Pages">Pages: </label>
-            <input type="text" id="pages" name="Pages" placeholder="total pages in book" width="50px">
-            <br><br>
-            <label for="Read">Pages read (optional): </label>
-            <input type="text" id="alreadyread" name="Read" placeholder="pages already read">
-            <br><br>
-            <label for="Days">Days: </label>
-            <input type="text" id="days" name="Days" placeholder="desired days to finish in">
-            <!-- do the math to calculate pages/day -->
-            <!-- alert (make a popup) with the answer -->
-            <br><br>
-            <button onclick="calculatePages()">Submit</button>
-        </div>
-        <br>
-        <br>
-        <div id="audiobooks">
-            <label for="Length">Total length: </label>
-            <input type="text" id="totallength" name="Length" placeholder="hh:mm:ss">
-            <br><br>
-            <label for="Listened">Length listened to (optional): </label>
-            <input type="text" id="listened" name="Listened" placeholder="hh:mm:ss">
-            <br><br>
-            <label for="Days">Days: </label>
-            <input type="text" id="audiodays" name="Days" placeholder="desired days to finish in">
-            <br><br>
-            <button onclick="calculateMinutes()">Submit</button>
-        </div>
+        <main>
+            <!-- take input for number of pages and number of days -->
+            <section class="left" id="default-pages">
+                <h2>Pages with known number of days</h2>
+                <label for="Pages">Pages: </label>
+                <input type="text" id="pages" name="Pages" placeholder="total pages in book" width="50px">
+                <br><br>
+                <label for="Read">Pages read (optional): </label>
+                <input type="text" id="alreadyread" name="Read" placeholder="pages already read">
+                <br><br>
+                <label for="Days">Days: </label>
+                <input type="text" id="days" name="Days" placeholder="desired days to finish in">
+                <!-- do the math to calculate pages/day -->
+                <!-- alert (make a popup) with the answer -->
+                <br><br>
+                <button onclick="calculatePages()">Submit</button>
+            </section>
+            <section class="right" id="audiobooks">
+                <h2>Timestamps with known number of days</h2>
+                <label for="Length">Total length: </label>
+                <input type="text" id="totallength" name="Length" placeholder="hh:mm:ss">
+                <br><br>
+                <label for="Listened">Length listened to (optional): </label>
+                <input type="text" id="listened" name="Listened" placeholder="hh:mm:ss">
+                <br><br>
+                <label for="Days">Days: </label>
+                <input type="text" id="audiodays" name="Days" placeholder="desired days to finish in">
+                <br><br>
+                <button onclick="calculateMinutes()">Submit</button>
+            </section>
+            <section class="left" id="pages-date">
+                <h2>Pages with completion date</h2>
+                <label for="Pages">Pages: </label>
+                <input type="text" id="pages2" name="Pages" placeholder="total pages in book" width="50px">
+                <br><br>
+                <label for="Read">Pages read (optional): </label>
+                <input type="text" id="alreadyread2" name="Read" placeholder="pages already read">
+                <br><br>
+                <label for="Date">Date to complete by: </label>
+                <input type="text" id="date" name="Days" placeholder="yyyy-mm-dd">
+                <br><br>
+                <button onclick="calculatePagesFromDate()">Submit</button>
+            </section>
+            <section class="right" id="audiobooks2">
+                <h2>Timestamps with completion date</h2>
+                <label for="Length">Total length: </label>
+                <input type="text" id="totallength2" name="Length" placeholder="hh:mm:ss">
+                <br><br>
+                <label for="Listened">Length listened to (optional): </label>
+                <input type="text" id="listened2" name="Listened" placeholder="hh:mm:ss">
+                <br><br>
+                <label for="Date">Date to complete by: </label>
+                <input type="text" id="audiodate" name="Days" placeholder="yyyy-mm-dd">
+                <br><br>
+                <button onclick="calculateMinutesFromDate()">Submit</button>
+            </section>
+        </main>
     </body>
 </html>
